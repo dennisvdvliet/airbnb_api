@@ -1,6 +1,6 @@
 # AirbnbApi
 
-[![Build Status](https://travis-ci.org/dennisvdvliet/airbnb_api.svg?branch=master)](https://travis-ci.org/dennisvdvliet/airbnb_api) [![Maintainability](https://api.codeclimate.com/v1/badges/616582587775bcabe3cd/maintainability)](https://codeclimate.com/github/dennisvdvliet/airbnb_api/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/616582587775bcabe3cd/test_coverage)](https://codeclimate.com/github/dennisvdvliet/airbnb_api/test_coverage)
+[![Build Status](https://travis-ci.org/dennisvdvliet/airbnb_api.svg?branch=master)](https://travis-ci.org/dennisvdvliet/airbnb_api) [![Maintainability](https://api.codeclimate.com/v1/badges/616582587775bcabe3cd/maintainability)](https://codeclimate.com/github/dennisvdvliet/airbnb_api/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/616582587775bcabe3cd/test_coverage)](https://codeclimate.com/github/dennisvdvliet/airbnb_api/test_coverage) [![Gem Version](https://badge.fury.io/rb/airbnb_api.svg)](https://badge.fury.io/rb/airbnb_api)
 
 The AirbnbApi ruby library provides an easy way to interact with the Airbnb API. The Airbnb API is being actively developed so please expect this gem to change regularly. The documentation for the Airbnb API can be found [here](https://www.airbnb.com/partner/api-docs/).
 
