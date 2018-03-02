@@ -35,7 +35,11 @@ module AirbnbApi
 
     %i[get patch post delete].each do |call|
       define_method call do |path, options = {}|
-        http.public_send(call, "#{version}#{path}", options).body
+        begin
+          http.public_send(call, "#{version}#{path}", options).body
+        rescue Faraday::ConnectionFailed => err
+          raise AirbnbApi::Errors::Timeout, err
+        end
       end
     end
 

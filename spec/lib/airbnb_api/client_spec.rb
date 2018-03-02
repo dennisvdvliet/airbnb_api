@@ -88,5 +88,11 @@ describe AirbnbApi::Client do
         end
       end
     end
+    context 'when a timeout occurs' do
+      it 'raises an error' do
+        stub_request(:any, /airbnb/).to_timeout
+        expect { client.get('/foo/bar') }.to raise_error(AirbnbApi::Errors::Timeout)
+      end
+    end
   end
 end

@@ -6,5 +6,7 @@ module AirbnbApi
     end
     class InvalidClient < StandardError
     end
+    class Timeout < StandardError
+    end
   end
 end
