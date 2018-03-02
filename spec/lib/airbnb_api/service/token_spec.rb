@@ -33,7 +33,7 @@ describe AirbnbApi::Service::Token do
       stub = stub_request(:get, 'https://api.airbnb.com/v2/oauth2/authorizations/token')
              .with(headers: { 'Authorization' => 'Basic MTIzNDp0b3BzZWNyZXQ=' })
              .to_return(body: response_fixture_for(:token))
-      client.tokens.find('token')
+      expect(client.tokens.find('token')).to be_a(AirbnbApi::Resource::Token)
       expect(stub).to have_been_requested
     end
   end

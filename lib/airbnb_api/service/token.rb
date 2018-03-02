@@ -2,7 +2,6 @@ module AirbnbApi
   module Service
     class Token
       include AirbnbApi::Service
-      include AirbnbApi::APIOperations::Create
       include AirbnbApi::APIOperations::Find
       extend AirbnbApi::Service::ClassMethods
 
