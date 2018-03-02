@@ -7,11 +7,11 @@ module AirbnbApi
         402 => true,
         403 => true,
         404 => true,
-        405 => true,
+        405 => AirbnbApi::Errors::RateLimit,
         406 => true,
         422 => true,
-        429 => true,
-        500 => true
+        429 => AirbnbApi::Errors::RateLimit,
+        503 => AirbnbApi::Errors::RateLimit
       }.freeze
 
       def on_complete(response)

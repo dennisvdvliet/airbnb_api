@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe AirbnbApi::Client do
+  let(:client) { AirbnbApi::Client.new(id: 1234, secret: 'topsecret') }
   context 'without a oauth token' do
-    let(:client) { AirbnbApi::Client.new(id: 1234, secret: 'topsecret') }
 
     it 'sets id' do
       expect(client.id).to eq(1234)
@@ -72,9 +72,21 @@ describe AirbnbApi::Client do
       expect(client.http.headers['X-Airbnb-Oauth-Token']).to eq('oauth')
       expect(client.http.headers['X-Airbnb-API-Key']).to eq(1234)
     end
+    context 'when used with an incompatible resource' do
+      it 'raises an error' do
+        expect { client.tokens }.to raise_error(AirbnbApi::Errors::InvalidClient)
+      end
+    end
+  end
 
-    it 'raises and error if used with an incompatible resource' do
-      expect{client.tokens}.to raise_error(AirbnbApi::Errors::InvalidClient)
+  describe 'error handling' do
+    context 'when hitting an ip rate limit' do
+      it 'raises an error' do
+        [405, 429, 503].each do |status|
+          stub_request(:any, /airbnb/).to_return(status: status)
+          expect { client.get('/foo/bar') }.to raise_error(AirbnbApi::Errors::RateLimit)
+        end
+      end
     end
   end
 end
