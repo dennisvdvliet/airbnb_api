@@ -27,4 +27,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec', '~> 3.0'
   spec.add_development_dependency 'simplecov'
   spec.add_development_dependency 'webmock', '~> 3.1'
+
+  spec.required_ruby_version = '>= 2.5.0'
 end
