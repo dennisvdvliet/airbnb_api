@@ -8,7 +8,6 @@ module AirbnbApi
 
     def attributes=(attributes)
       @attributes = attributes
-
       attributes.each do |attribute, value|
         if self.class.many && self.class.many.has_key?(attribute.to_sym)
           items = value.map do |data|
@@ -43,7 +42,7 @@ module AirbnbApi
 
       def root_element
         @root = @root.nil? ? true : @root
-        @root ? name.to_s.gsub(/([^\^])([A-Z])/,'\1_\2').downcase.to_sym : nil
+        @root ? name.to_s.split('::').last.gsub(/([^\^])([A-Z])/,'\1_\2').downcase.to_sym : nil
       end
 
       def build(attributes)

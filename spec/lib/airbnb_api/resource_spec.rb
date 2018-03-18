@@ -53,18 +53,33 @@ describe AirbnbApi::Resource do
         end
       end
     end
+
+    context 'when using a namespace class' do
+      let(:test_class) do
+        module FirstPart
+          class LastPart
+            include AirbnbApi::Resource
+            extend AirbnbApi::Resource::ClassMethods
+          end
+        end
+        FirstPart::LastPart
+      end
+      it 'should only return the last part of the class path' do
+        expect(test_class.root_element).to eq(:last_part)
+      end
+    end
   end
 
   describe 'attributes' do
     context 'when attributes are assigned' do
       let(:subject) do
-        class Subject
+        class TestSubject
           include AirbnbApi::Resource
           extend AirbnbApi::Resource::ClassMethods
           has_attributes %i[id foo]
           has_root false
         end
-        Subject
+        TestSubject
       end
       it 'responds to #id' do
         expect(subject.new({})).to respond_to(:id)
@@ -100,18 +115,16 @@ describe AirbnbApi::Resource do
       end
 
       it 'responds to #messages' do
-        expect(subject.new({})).to respond_to(:messages)
+        expect(subject.new(data)).to respond_to(:messages)
       end
-      describe '#messages' do
-        it 'returns an array' do
-          expect(subject.new(data).messages).to be_a(Array)
-        end
-        it 'returns 1 item' do
-          expect(subject.new(data).messages.count).to eq(1)
-        end
-        it 'returns a TestMessage object' do
-          expect(subject.new(data).messages.first).to be_a(TestMessage)
-        end
+      it 'returns an array' do
+        expect(subject.new(data).messages).to be_a(Array)
+      end
+      it 'returns 1 item' do
+        expect(subject.new(data).messages.count).to eq(1)
+      end
+      it 'returns a TestMessage object' do
+        expect(subject.new(data).messages.first).to be_a(TestMessage)
       end
     end
   end
