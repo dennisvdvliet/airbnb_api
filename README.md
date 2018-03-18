@@ -4,6 +4,9 @@
 
 The AirbnbApi ruby library provides an easy way to interact with the Airbnb API. The Airbnb API is being actively developed so please expect this gem to change regularly. The documentation for the Airbnb API can be found [here](https://www.airbnb.com/partner/api-docs/).
 
+**Please note**
+This gem is very much work in progress and not yet intended for public use.
+
 ## Installation
 
 Add this line to your application's Gemfile:
