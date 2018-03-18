@@ -9,6 +9,7 @@ describe AirbnbApi::Service::Listing do
 
     it 'should make a request to /listings/1' do
       stub = stub_request(:get, 'https://api.airbnb.com/v2/listings/1')
+             .to_return(body: response_fixture_for(:listing))
       described_class.new(client).find(1)
       expect(stub).to have_been_requested
     end

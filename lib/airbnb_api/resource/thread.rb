@@ -1,15 +1,14 @@
 module AirbnbApi
   module Resource
-    class Token
+    class Thread
       include AirbnbApi::Resource
       extend AirbnbApi::Resource::ClassMethods
 
       has_attributes %i[
-        access_token
-        expires_at
-        refresh_token
-        user_id
+        thread
       ]
+
+      has_many :messages, AirbnbApi::Resource::Message
     end
   end
 end

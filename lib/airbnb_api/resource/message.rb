@@ -1,13 +1,14 @@
 module AirbnbApi
   module Resource
-    class Token
+    class Message
       include AirbnbApi::Resource
       extend AirbnbApi::Resource::ClassMethods
 
       has_attributes %i[
-        access_token
-        expires_at
-        refresh_token
+        id
+        message
+        created_at
+        attachment_images
         user_id
       ]
     end

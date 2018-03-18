@@ -3,7 +3,7 @@ require 'base64'
 module AirbnbApi
   class Client
     attr_reader :id, :secret, :oauth_token
-    def initialize(id:, secret:, oauth_token: nil)
+    def initialize(id:, secret: nil, oauth_token: nil)
       @id = id
       @secret = secret
       @oauth_token = oauth_token

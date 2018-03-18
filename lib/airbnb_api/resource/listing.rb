@@ -4,7 +4,7 @@ module AirbnbApi
       include AirbnbApi::Resource
       extend AirbnbApi::Resource::ClassMethods
 
-      attributes %i[
+      has_attributes %i[
         id
         name
         property_type_category

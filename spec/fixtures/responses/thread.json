@@ -1,0 +1,76 @@
+{
+  "thread": {
+    "id": 222333,
+    "business_purpose": "booking_direct_thread",
+    "last_message_sent_at": "2017-03-29T15:57:45Z",
+    "users": [
+      {
+        "id": 124021,
+        "first_name": "Andrei",
+        "preferred_locale": "ru",
+        "location": "San Francisco"
+      },
+      {
+        "id": 5678432,
+        "name": "Giuseppe",
+        "preferred_locale": "it",
+        "location": "Palermo"
+      }
+    ],
+    "attachment": {
+      "type": "Reservation",
+      "status": "accepted",
+      "roles": [
+        {
+          "role": "owner",
+          "user_ids": [
+            5678432
+          ]
+        },
+        {
+          "role": "guest",
+          "user_ids": [
+            124021
+          ]
+        }
+      ],
+      "booking_details": {
+        "listing_id": 323549,
+        "listing_name": "Sunny Vila",
+        "checkin_date": "2017-03-29",
+        "checkout_date": "2017-04-01",
+        "expected_payout_amount_accurate":"1102.00",
+        "non_response_at": "2017-03-30T12:57:45Z",
+        "nights": 3,
+        "number_of_guests": 4,
+        "number_of_adults": 3,
+        "number_of_children": 1,
+        "number_of_infants": 0,
+        "reservation_confirmation_code": "HDTYS45DS2"
+      }
+    },
+    "messages": [
+        {
+          "id": 2345433,
+          "message": "Hi, I'm visiting Palermo with my family.",
+          "created_at": "2017-03-29T15:57:45Z",
+          "attachment_images": [
+          ],
+          "user_id": 124021
+        },
+        {
+          "id":2345343,
+          "message": "Hi, Andrei. We are happy to host you!",
+          "created_at": "2017-03-29T18:57:45Z",
+          "attachment_images": [
+            {
+              "url": "http://image.com/img.jpg",
+              "width": 400,
+              "height": 600
+            }
+          ],
+          "user_id" :5678432
+        }
+    ]
+  }
+}

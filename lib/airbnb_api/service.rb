@@ -9,10 +9,15 @@ module AirbnbApi
     end
 
     module ClassMethods
-      attr_accessor :path
+      attr_accessor :path, :parameters
       attr_reader :requires_oauth_token
       def set_path(path)
         @path = path
+      end
+
+      def set_parameter(parameter, default)
+        @parameters ||= {}
+        @parameters[parameter.to_sym] = default
       end
 
       def require_oauth_token
@@ -26,7 +31,6 @@ module AirbnbApi
       def requires_oauth_token?
         @requires_oauth_token == true
       end
-
     end
   end
 end

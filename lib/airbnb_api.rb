@@ -13,10 +13,15 @@ require 'airbnb_api/client'
 require 'airbnb_api/service'
 require 'airbnb_api/service/listing'
 require 'airbnb_api/service/token'
+require 'airbnb_api/service/thread'
+
 
 require 'airbnb_api/resource'
 require 'airbnb_api/resource/listing'
 require 'airbnb_api/resource/token'
+require 'airbnb_api/resource/message'
+require 'airbnb_api/resource/thread'
+
 
 require 'airbnb_api/errors/errors'
 require 'airbnb_api/util/error_handling'
