@@ -11,6 +11,7 @@ module AirbnbApi
         attachment_images
         user_id
       ]
+      has_root false
     end
   end
 end

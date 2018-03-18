@@ -25,7 +25,7 @@ module AirbnbApi
       @http ||= Faraday.new(url: base_url) do |faraday|
         faraday.headers = headers
         faraday.request :url_encoded
-        faraday.response :json
+        faraday.response :json, parser_options: { :symbolize_names => true }
 
         faraday.use AirbnbApi::Util::ErrorHandling
 

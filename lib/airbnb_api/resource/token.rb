@@ -10,6 +10,7 @@ module AirbnbApi
         refresh_token
         user_id
       ]
+      has_root false
     end
   end
 end

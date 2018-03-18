@@ -28,7 +28,7 @@ describe AirbnbApi::Client do
       it 'posts and parses json' do
         stub_request(:post, 'https://api.airbnb.com/v2/path')
           .to_return(status: 200, body: { foo: 'bar' }.to_json)
-        expect(client.post('/path', 'body')).to eq('foo' => 'bar')
+        expect(client.post('/path', 'body')).to eq(foo: 'bar')
       end
     end
 
@@ -36,7 +36,7 @@ describe AirbnbApi::Client do
       it 'gets and parses json' do
         stub_request(:get, 'https://api.airbnb.com/v2/path')
           .to_return(status: 200, body: { foo: 'bar' }.to_json)
-        expect(client.get('/path')).to eq('foo' => 'bar')
+        expect(client.get('/path')).to eq(foo: 'bar')
       end
     end
 
@@ -44,7 +44,7 @@ describe AirbnbApi::Client do
       it 'patches and parses json' do
         stub_request(:patch, 'https://api.airbnb.com/v2/path')
           .to_return(status: 200, body: { foo: 'bar' }.to_json)
-        expect(client.patch('/path', 'body')).to eq('foo' => 'bar')
+        expect(client.patch('/path', 'body')).to eq(foo: 'bar')
       end
     end
 
@@ -52,7 +52,7 @@ describe AirbnbApi::Client do
       it 'deletes and parses json' do
         stub_request(:delete, 'https://api.airbnb.com/v2/path')
           .to_return(status: 200, body: { foo: 'bar' }.to_json)
-        expect(client.delete('/path')).to eq('foo' => 'bar')
+        expect(client.delete('/path')).to eq(foo: 'bar')
       end
     end
     describe '#token' do

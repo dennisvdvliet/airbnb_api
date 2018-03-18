@@ -13,5 +13,5 @@ def response_fixture_for(resource)
 end
 
 def fixture_for(resource)
-  JSON.parse(response_fixture_for(resource))
+  JSON.parse(response_fixture_for(resource), symbolize_names: true)
 end
